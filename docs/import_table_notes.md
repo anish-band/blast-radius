@@ -23,6 +23,8 @@ Returns two things:
 | `import_submodule.py` | `import numpy.linalg` | `{"numpy": "numpy"}` | `[]` |
 | `from_import_star.py` | `from numpy import *` | `{}` | `["numpy"]` |
 | `comment_and_string.py` | `import numpy as np`, plus the symbol in a comment and a string | `{"np": "numpy"}` | `[]` |
+| `import_multiple.py` | `import numpy, pandas as pd` | `{"numpy": "numpy", "pd": "pandas"}` | `[]` |
+| `from_import_multiple.py` | `from numpy import float_, int_ as i` | `{"float_": "numpy.float_", "i": "numpy.int_"}` | `[]` |
 
 ## Why
 

@@ -75,3 +75,21 @@ def test_comment_and_string():
 
     assert names == {"np": "numpy"}
     assert star_modules == []
+
+
+def test_import_multiple():
+    src_code = (FIXTURES / "import_multiple.py").read_bytes()
+
+    names, star_modules = build_import_table(src_code)
+
+    assert names == {"numpy": "numpy", "pd": "pandas"}
+    assert star_modules == []
+
+
+def test_from_import_multiple():
+    src_code = (FIXTURES / "from_import_multiple.py").read_bytes()
+
+    names, star_modules = build_import_table(src_code)
+
+    assert names == {"float_": "numpy.float_", "i": "numpy.int_"}
+    assert star_modules == []
